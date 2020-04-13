@@ -2,21 +2,23 @@ import React from "react"
 import {Link} from "gatsby"
 import Layout from "../components/Layout"
 
+import SimleHero from "../components/SimpleHero"
+import Banner from "../components/Banner"
+
 export default () => (
 
 <Layout>
-<Link to="/blog"> blog </Link>
-<br></br>
-   <h1 > Hello world! doom </h1> 
-   <div className="container">
-       <div className="row">
-       <div className="col-4"> 
-<button type="button" class="btn btn-primary">Primary</button> </div>
-       <div className="col-4"> damn </div>
-       <div className="col-4"> damn </div>
-       </div>
-   </div>
-    </Layout>
+ <SimleHero>
+ <Banner
+        title="continue exploring"
+        info=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, officiis."
+      >
+        <Link to="/tours" className="btn-white">
+          explore tours
+        </Link>
+      </Banner>
+ </SimleHero>
+</Layout>
 
 
 )

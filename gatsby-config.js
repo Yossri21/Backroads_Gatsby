@@ -10,12 +10,14 @@ require("dotenv").config({
 
 module.exports = {
   /* Your site config here */
-  siteMetadata : {
-    title : "Backroads",
-    description : 
-    "Explore & discover all the every where " 
-    + " enjoy life is better ",
-      author : "@yosri"
+  siteMetadata: {
+    title: "BackRoads",
+    description:
+      "Explore awesome worldwide tours & discover what makes each of them unique. Forget your daily routine & say yes to adventure",
+    author: "@yosri",
+    twitterUsername: "@yosri",
+    image: "defaultBcg.jpeg",
+    siteUrl: "https://showcasewebsite.netlify.com",
   },
   plugins: [
     {
@@ -33,12 +35,22 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://showcasewebsite.netlify.com',
+        sitemap: 'https://showcasewebsite.netlify.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
     `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
      `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-playground`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`
   
   ]
 }
